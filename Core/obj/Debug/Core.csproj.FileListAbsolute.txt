@@ -1,0 +1,67 @@
+C:\Documents and Settings\Admin\Desktop\LibCore\Core\Core\bin\Debug\Core.dll
+C:\Documents and Settings\Admin\Desktop\LibCore\Core\Core\bin\Debug\Core.pdb
+C:\Documents and Settings\Admin\Desktop\LibCore\Core\Core\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Admin\Desktop\LibCore\Core\Core\obj\Debug\Core.dll
+C:\Documents and Settings\Admin\Desktop\LibCore\Core\Core\obj\Debug\Core.pdb
+C:\Documents and Settings\Admin\Desktop\BalloonShop\Core\Core\bin\Debug\Core.dll
+C:\Documents and Settings\Admin\Desktop\BalloonShop\Core\Core\bin\Debug\Core.pdb
+C:\Documents and Settings\Admin\Desktop\BalloonShop\Core\Core\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Admin\Desktop\BalloonShop\Core\Core\obj\Debug\Core.dll
+C:\Documents and Settings\Admin\Desktop\BalloonShop\Core\Core\obj\Debug\Core.pdb
+D:\GiaoTrinh\GiangDay\ASPNET\Desktop\BalloonShop\Core\Core\bin\Debug\Core.dll
+D:\GiaoTrinh\GiangDay\ASPNET\Desktop\BalloonShop\Core\Core\bin\Debug\Core.pdb
+D:\GiaoTrinh\GiangDay\ASPNET\Desktop\BalloonShop\Core\Core\obj\Debug\ResolveAssemblyReference.cache
+D:\GiaoTrinh\GiangDay\ASPNET\Desktop\BalloonShop\Core\Core\obj\Debug\Core.dll
+D:\GiaoTrinh\GiangDay\ASPNET\Desktop\BalloonShop\Core\Core\obj\Debug\Core.pdb
+D:\GiaoTrinh\GiangDay\CMS\Lab moi\DuAnMau\Core\Core\bin\Debug\Core.dll
+D:\GiaoTrinh\GiangDay\CMS\Lab moi\DuAnMau\Core\Core\bin\Debug\Core.pdb
+D:\GiaoTrinh\GiangDay\CMS\Lab moi\DuAnMau\Core\Core\obj\Debug\ResolveAssemblyReference.cache
+D:\GiaoTrinh\GiangDay\CMS\Lab moi\DuAnMau\Core\Core\obj\Debug\Core.dll
+D:\GiaoTrinh\GiangDay\CMS\Lab moi\DuAnMau\Core\Core\obj\Debug\Core.pdb
+D:\GiaoTrinh\GiangDay\CMS\Lab moi\DuAnMau\Core\bin\Debug\Core.dll
+D:\GiaoTrinh\GiangDay\CMS\Lab moi\DuAnMau\Core\bin\Debug\Core.pdb
+D:\GiaoTrinh\GiangDay\CMS\Lab moi\DuAnMau\Core\obj\Debug\ResolveAssemblyReference.cache
+D:\GiaoTrinh\GiangDay\CMS\Lab moi\DuAnMau\Core\obj\Debug\Core.dll
+D:\GiaoTrinh\GiangDay\CMS\Lab moi\DuAnMau\Core\obj\Debug\Core.pdb
+D:\GiaoTrinh\GiangDay\CMS\Lab moi\DuAnMau2\Core\bin\Debug\Core.dll
+D:\GiaoTrinh\GiangDay\CMS\Lab moi\DuAnMau2\Core\bin\Debug\Core.pdb
+D:\GiaoTrinh\GiangDay\CMS\Lab moi\DuAnMau2\Core\obj\Debug\ResolveAssemblyReference.cache
+D:\GiaoTrinh\GiangDay\CMS\Lab moi\DuAnMau2\Core\obj\Debug\Core.dll
+D:\GiaoTrinh\GiangDay\CMS\Lab moi\DuAnMau2\Core\obj\Debug\Core.pdb
+D:\GiaoTrinh\GiangDay\CMS\Lab moi\DuAnMau_Lab1\Core\bin\Debug\Core.dll
+D:\GiaoTrinh\GiangDay\CMS\Lab moi\DuAnMau_Lab1\Core\bin\Debug\Core.pdb
+D:\GiaoTrinh\GiangDay\CMS\Lab moi\DuAnMau_Lab1\Core\obj\Debug\ResolveAssemblyReference.cache
+D:\GiaoTrinh\GiangDay\CMS\Lab moi\DuAnMau_Lab1\Core\obj\Debug\Core.dll
+D:\GiaoTrinh\GiangDay\CMS\Lab moi\DuAnMau_Lab1\Core\obj\Debug\Core.pdb
+D:\GiaoTrinh\GiangDay\CMS\Lab moi\DuAnMau_Lab1 - Copy\Core\bin\Debug\Core.dll
+D:\GiaoTrinh\GiangDay\CMS\Lab moi\DuAnMau_Lab1 - Copy\Core\bin\Debug\Core.pdb
+D:\GiaoTrinh\GiangDay\CMS\Lab moi\DuAnMau_Lab1 - Copy\Core\obj\Debug\ResolveAssemblyReference.cache
+D:\GiaoTrinh\GiangDay\CMS\Lab moi\DuAnMau_Lab1 - Copy\Core\obj\Debug\Core.dll
+D:\GiaoTrinh\GiangDay\CMS\Lab moi\DuAnMau_Lab1 - Copy\Core\obj\Debug\Core.pdb
+G:\HocTap\Nam 4\Hoc Ky II\He Quan Tri Noi Dung\CMS\lab\cms_aspnet\DuAnMau_Lab1\DuAnMau_Lab1\Core\bin\Debug\Core.dll
+G:\HocTap\Nam 4\Hoc Ky II\He Quan Tri Noi Dung\CMS\lab\cms_aspnet\DuAnMau_Lab1\DuAnMau_Lab1\Core\bin\Debug\Core.pdb
+G:\HocTap\Nam 4\Hoc Ky II\He Quan Tri Noi Dung\CMS\lab\cms_aspnet\DuAnMau_Lab1\DuAnMau_Lab1\Core\obj\Debug\Core.dll
+G:\HocTap\Nam 4\Hoc Ky II\He Quan Tri Noi Dung\CMS\lab\cms_aspnet\DuAnMau_Lab1\DuAnMau_Lab1\Core\obj\Debug\Core.pdb
+F:\Code\Core\bin\Debug\Core.dll
+F:\Code\Core\bin\Debug\Core.pdb
+F:\Code\Core\obj\Debug\Core.csprojResolveAssemblyReference.cache
+F:\Code\Core\obj\Debug\Core.dll
+F:\Code\Core\obj\Debug\Core.pdb
+D:\Code\Core\bin\Debug\Core.dll
+D:\Code\Core\bin\Debug\Core.pdb
+D:\Code\Core\obj\Debug\Core.csprojResolveAssemblyReference.cache
+D:\Code\Core\obj\Debug\Core.csproj.CoreCompileInputs.cache
+D:\Code\Core\obj\Debug\Core.dll
+D:\Code\Core\obj\Debug\Core.pdb
+C:\Users\Mee\source\repos\Test_1_TrungTamDaoTao\Core\bin\Debug\Core.dll
+C:\Users\Mee\source\repos\Test_1_TrungTamDaoTao\Core\bin\Debug\Core.pdb
+C:\Users\Mee\source\repos\Test_1_TrungTamDaoTao\Core\obj\Debug\Core.csprojAssemblyReference.cache
+C:\Users\Mee\source\repos\Test_1_TrungTamDaoTao\Core\obj\Debug\Core.csproj.CoreCompileInputs.cache
+C:\Users\Mee\source\repos\Test_1_TrungTamDaoTao\Core\obj\Debug\Core.dll
+C:\Users\Mee\source\repos\Test_1_TrungTamDaoTao\Core\obj\Debug\Core.pdb
+C:\Users\Mee\source\repos\Test_2_TrungTamDaoTao_Real\Core\bin\Debug\Core.dll
+C:\Users\Mee\source\repos\Test_2_TrungTamDaoTao_Real\Core\bin\Debug\Core.pdb
+C:\Users\Mee\source\repos\Test_2_TrungTamDaoTao_Real\Core\obj\Debug\Core.csprojAssemblyReference.cache
+C:\Users\Mee\source\repos\Test_2_TrungTamDaoTao_Real\Core\obj\Debug\Core.csproj.CoreCompileInputs.cache
+C:\Users\Mee\source\repos\Test_2_TrungTamDaoTao_Real\Core\obj\Debug\Core.dll
+C:\Users\Mee\source\repos\Test_2_TrungTamDaoTao_Real\Core\obj\Debug\Core.pdb
