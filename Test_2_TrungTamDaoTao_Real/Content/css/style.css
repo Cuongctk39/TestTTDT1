@@ -1,0 +1,152 @@
+@import url('https://fonts.google.com/specimen/Noto+Sans?selection.family=Noto+Sans');
+
+html, body {
+	width: 100%;
+	min-height: 100%;
+	font-family: 'noto sans';
+	font-size: 25px;
+    color: #222;
+}
+a{
+    text-decoration:none;
+}
+a:hover{
+    text-decoration:none;
+}
+.navbar {
+    background-color: rgba(47, 98, 240, 0.9) !important;
+}
+    .navbar li a {
+        color: rgba(229, 239, 241, 0.9) !important;
+    }
+.dropdown > a:hover {
+    color: #222 !important;
+}
+.navbar li a.active{
+    color: rgb(140, 228, 26) !important;
+}
+.navbar li> a:hover{
+    color: #222 !important;
+}
+.carousel-caption{
+    top: 10%;
+    color: white;
+    text-shadow: 5px 5px 15px #1C6EA4;
+}
+.carousel-caption h3{
+    font-size: 100%;
+}
+.carousel-caption h4{
+    font-size: 100%;
+}
+.carousel-inner button a{
+    text-decoration: none;
+    color: white;
+    text-shadow: 5px 5px 15px #1C6EA4;
+}
+
+
+.container{
+    max-width: 100%;
+}
+.card-body li {
+    border-bottom: 1px dashed black;
+}
+.card-body ul{
+    list-style: none;
+}
+.card-body li a{
+    text-decoration: none;
+}
+.content{
+    -webkit-box-shadow: 0px 0px 33px 6px rgba(0,0,0,0.45);
+    -moz-box-shadow: 0px 0px 33px 6px rgba(0,0,0,0.45);
+    box-shadow: 0px 0px 33px 6px rgba(0,0,0,0.45);
+}
+
+.social a{
+    font-size: 3em;
+    padding: 3rem;
+}
+.fa-facebook{
+    color: rgb(60, 90, 154);
+}
+.fa-youtube{
+    color: red;
+}
+
+
+footer{
+    background-color: #3f3f3f;
+    color:  white;
+    font-size: 0.8em;
+}
+.dropdown-item-bg {
+    background-color: rgba(47, 98, 240, 0.9);
+}
+    .dropdown-item-bg a:hover {
+        background-color: white;
+        color: rgb(47, 98, 240) !important;
+    }
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+    .carousel-caption{
+        top: 15%;
+    }
+    .carousel-caption h3{
+        font-size: 150%;
+    }
+    .carousel-caption h4{
+        font-size: 150%;
+    }
+    .container{
+        max-width: 95%;
+    }
+}
+
+/* // Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    .carousel-caption{
+        top: 40%;
+    }
+    .carousel-caption h3{
+        font-size: 200%;
+    }
+    .carousel-caption h4{
+        font-size: 200%;
+    }
+    .container{
+        max-width: 95%;
+    }
+}
+/* // Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    .carousel-caption{
+        top: 40%;
+    }
+    .carousel-caption h3{
+        font-size: 300%;
+    }
+    .carousel-caption h4{
+        font-size: 300%;
+    }
+    .container{
+        max-width: 85%;
+    }
+}
+
+/* // Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    .carousel-caption{
+        top: 40%;
+    }
+    .carousel-caption h3{
+        font-size: 300%;
+    }
+    .carousel-caption h4{
+        font-size: 300%;
+    }
+    .container{
+        max-width: 80%;
+    }
+}

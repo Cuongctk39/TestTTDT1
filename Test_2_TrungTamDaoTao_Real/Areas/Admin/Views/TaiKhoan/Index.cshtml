@@ -1,0 +1,120 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+<h3>Danh sách tài khoản</h3>
+<button class="btn btn-success my-2" id="themMoiTaiKhoan">Thêm mới tài khoản</button>
+<table id="table_TaiKhoan" class="display responsive no-wrap table table-striped table-bordered" style="width:100%">
+    <thead>
+        <tr>
+            <th data-priority="1">Email</th>
+            <th data-priority="5">Họ tên lót</th>
+            <th data-priority="4">Tên</th>
+            <th data-priority="3">Quyền</th>
+            <th data-priority="2">Chức năng</th>
+        </tr>
+    </thead>
+</table>
+
+@RenderPage("/Areas/Admin/Views/TaiKhoan/ChinhSua.cshtml")
+@RenderPage("/Areas/Admin/Views/TaiKhoan/ThemMoi.cshtml")
+
+@section script{
+    @Styles.Render("~/Content/ResponsiveDataTableCSS")
+    <link href="~/Content/css/jquery.growl.css" rel="stylesheet" />
+    @Scripts.Render("~/bundles/ResponsiveDataTableJS")
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    <script src="~/Scripts/js/jquery.growl.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $("#table_TaiKhoan").DataTable({
+                ajax: {
+                    url: "/Admin/TaiKhoan/LayDSTaiKhoan",
+                    type: "get",
+                    dataType: "json"
+                },
+                columns: [
+                    { data: "Email" },
+                    { data: "HoTenLot" },
+                    { data: "Ten" },
+                    { data: "TenQuyen" },
+                    {
+                        data: "IdTaiKhoan", render: function (data) {
+                            return "<a href='#' onclick='LayThongTin(" + data + ")'><i class='fas fa-list'>&nbsp;</i>Chỉnh sửa</a>"
+                        }
+                    }
+                ]
+            });
+        });
+
+        function LayThongTin(id) {
+            $.ajax({
+                url: "/Admin/TaiKhoan/LayThongTinTaikhoan",
+                type: "get",
+                dataType: "json",
+                data: { idtk: id }
+            }).done(function (data) {
+                var parsedData = JSON.parse(data);
+                $("#SuaIdTaiKhoan").val(parsedData.IdTaiKhoan);
+                $("#SuaMatKhau").val(parsedData.MatKhau);
+                $("#SuaEmail").val(parsedData.Email);
+                $("#SuaHoVaTenLot").val(parsedData.HoTenLot);
+                $("#SuaTen").val(parsedData.Ten);
+                $("#SuaQuyen option[value=" + parsedData.IdQuyen + "]").attr('selected', 'selected');
+                $("#modalChinhSua").modal("show");
+            });
+        }
+
+        $("#xacNhanChinhSua").on("click", function () {
+            var data = $("#chinhSuaForm").serialize();
+            if (!$("#chinhSuaForm").valid()) {
+                return false;
+            }
+            $.ajax({
+                url: "/Admin/TaiKhoan/ChinhSuaTaiKhoan",
+                type: "post",
+                dataType: "json",
+                data: data
+            }).done(function () {
+                $.growl({
+                    location:"tc",
+                    title:"Thông báo",
+                    message: "Chỉnh sửa thành công",
+                    style:"notice"
+                });
+                $("#modalChinhSua").modal("hide");
+                $("#table_TaiKhoan").DataTable().ajax.reload();
+            }).fail(function () {
+            });
+        });
+
+        $("#themMoiTaiKhoan").on("click", function () {
+            $("#modalThemMoi").modal("show");
+        });
+        $("#xacNhanTaoMoi").on("click", function () {
+            if (!$("#themMoiForm").valid()) {
+                return false;
+            }
+
+            var data = $("#themMoiForm").serialize();
+
+            $.ajax({
+                url: "/Admin/TaiKhoan/TaoMoiTaiKhoan",
+                data: data,
+                dataType: "json",
+                type: "post"
+            }).done(function (data) {
+                $.growl({
+                    location: "tc",
+                    title: "Thông báo",
+                    message: "Thêm mới thành công",
+                    style:"notice"
+                });
+                $("#modalThemMoi").modal("hide");
+                $("#table_TaiKhoan").DataTable().ajax.reload();
+            });
+        });
+    </script>
+}

@@ -1,0 +1,3 @@
+gmail server
+email: emailnhom14@gmail.com
+pass: matkhaulagi

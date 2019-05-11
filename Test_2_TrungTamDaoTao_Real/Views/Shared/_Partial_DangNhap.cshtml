@@ -1,0 +1,116 @@
+﻿@model Test_2_TrungTamDaoTao_Real.Models.Model.TaiKhoanDangNhap
+
+@using (Html.BeginForm("DangNhapTaiKhoan", "Home"))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <a href="/Home/Facebook">
+            <div class="form-group justify-content-center" id="loginFB">
+                <span class="fab fa-facebook-f"></span> Đăng nhập với Facebook
+            </div>
+        </a>
+        <h2>Thông tin đăng nhập</h2>
+
+        @Html.ValidationMessage("LoiDangNhap")
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label" })
+            @*<input data-toggle="tooltip" title="Địa chỉ email" data-placement="top" type="email" class="form-control" id="tenDangNhap" placeholder="Địa chỉ Email">*@
+            @Html.TextBoxFor(model => model.Email, new { @data_toggle = "tooltip", @title = "Địa chỉ email", @data_placement = "top", @type = "email", @class = "form-control", @id = "tenDangNhap", @placeholder = "Địa chỉ Email" })
+            @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.MatKhau, htmlAttributes: new { @class = "control-label" })
+            @*<input data-toggle="tooltip" title="Mật khẩu" data-placement="top" type="password" class="form-control" id="matKhau" placeholder="Nhập mật khẩu">*@
+            @Html.TextBoxFor(model => model.MatKhau, new { @data_toggle = "tooltip", @title = "Mật khẩu", @data_placement = "top", @type = "password", @class = "form-control", @id = "matKhau", @placeholder = "Nhập mật khẩu" })
+            @Html.ValidationMessageFor(model => model.MatKhau, "", new { @class = "text-danger" })
+        </div>
+
+        <div class="form-group">
+            <a href="#" data-target="#quenMatKhau" data-toggle="modal">Quên mật khẩu?</a>
+        </div>
+
+        <div class="form-group py-3">
+            <input type="submit" class="btn btn-primary btn-block" name="" id="DangNhap" value="Đăng nhập">
+        </div>
+
+
+    </div>
+}
+@*Modal Quên mật khẩu*@
+<!-- Modal -->
+
+
+<div class="modal fade" id="quenMatKhau" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Quên mật khẩu</h5>
+                <button type="button" class="close close-modal-quenMatKhau" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <h5>Hãy điền địa chỉ Email để chúng tôi có thể gửi mật khẩu mới cho bạn</h5>
+                <form action="/Home/QuenMatKhau" method="post" id="formQuenMatKhau">
+                    <div class="form-group">
+                        <input class="form-control" type="email" name="diaChiEmail" id="diaChiEmail" placeholder="Địa chỉ Email" />
+                        <p id="thongBaoEmail"></p>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary close-modal-quenMatKhau" data-dismiss="modal">Đóng</button>
+                <button type="button" class="btn btn-primary" id="xacNhanSubmidFormQuenMatKhau">Xác nhận</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="~/Scripts/jquery-3.3.1.min.js"></script>
+<script>
+    $(document).ready(function () {
+        //Chặn nhấn Enter submit form
+        $('form input').keydown(function (e) {
+            if (e.keyCode == 13) {
+                e.preventDefault();
+                return false;
+            }
+        });
+
+        $("#xacNhanSubmidFormQuenMatKhau").on("click", function () {
+            var email = $("#formQuenMatKhau").serialize();
+            $.ajax({
+                url: '/Home/QuenMatKhau',
+                type: 'Post',
+                data: email,
+            }).done(function (data) {
+                if (data == 0) {
+                    $("#thongBaoEmail").text("Địa chỉ email không tồn tại");
+                    $("#thongBaoEmail").removeClass();
+                    $("#thongBaoEmail").addClass("text-danger");
+                }
+                else if (data == 1) {
+                    $("#thongBaoEmail").text("Bạn đã sử dụng tài khoản Email này để đăng nhập bằng Facebook");
+                    $("#thongBaoEmail").removeClass();
+                    $("#thongBaoEmail").addClass("text-info");
+                }
+                else {
+                    $("#thongBaoEmail").text("Chúng tôi đã gửi mật khẩu mới đến email của bạn");
+                    $("#thongBaoEmail").removeClass();
+                    $("#thongBaoEmail").addClass("text-primary");
+                }
+            });
+        });
+
+        //reset sau khi đóng modal
+        $(".close-modal-quenMatKhau").on("click", function () {
+            $("#thongBaoEmail").removeClass();
+            $("#thongBaoEmail").text("");
+            $("#diaChiEmail").val("");
+        });
+    });
+</script>

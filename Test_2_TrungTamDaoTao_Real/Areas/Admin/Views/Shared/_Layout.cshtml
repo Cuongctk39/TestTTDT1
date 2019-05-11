@@ -1,0 +1,132 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link href="~/Content/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link href="~/Content/css/admin_site_2.css" rel="stylesheet" />
+    <link href="~/Content/css/datatables.min.css" rel="stylesheet" />
+</head>
+<body>
+    <form>
+        <input type="hidden" id="navLinkIndex" value="@ViewBag.navLink" />
+    </form>
+    <!-- header mobile -->
+    <nav class="navbar navbar-light header-mobile d-md-none bg-header-mobile">
+        <div class="container-fluid">
+            <div class="sidebar-header">
+                <a href="#" class="navbar-branch">
+                    <img src="~/Content/images/logo.png" height="50">
+                </a>
+            </div>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navSidebar" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navSidebar">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Home/Index"><i class="fas fa-arrow-circle-left"></i>&nbsp; Quay lại trang chủ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#" id="navTrangChu"><i class="fas fa-cog"></i>&nbsp; Trang chủ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Admin/TaiKhoan/Index"><i class="fas fa-cog"></i>&nbsp; Quản lý tài khoản</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="fas fa-cog"></i>&nbsp; Quản lý khóa học</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="fas fa-cog"></i>&nbsp; Quản lý tin tức</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- desktop -->
+    <div class="wrapper">
+        <!-- sidebar -->
+        <nav id="sidebar" class="d-none d-md-block">
+            <div class="sidebar-header">
+                <a href="#" class="navbar-branch">
+                    <img src="~/Content/images/logo.png" height="50">
+                </a>
+            </div>
+            <ul class="list-unstyled components">
+                <!-- <p class="menu-header"> MENU</p> -->
+                <li>
+                    <a href="/Home/Index"><i class="fas fa-arrow-circle-left"></i> &nbsp; Quay lại trang chủ</a>
+                </li>
+                <li>
+                    <a href="/Admin/Home/Index" class="active" id="trangChu"><i class="fas fa-cog"></i>&nbsp; Trang chủ Admin</a>
+                </li>
+                <li>
+                    <a href="/Admin/TaiKhoan/Index" id="qlTaiKhoan"><i class="fas fa-cog"></i>&nbsp; Quản lý tài khoản</a>
+                </li>
+                <li>
+                    <a href="#" id="qlKhoaHoc"><i class="fas fa-cog"></i>&nbsp; Quản lý khóa học</a>
+                </li>
+                <li>
+                    <a href="#" id="qlTinTuc"><i class="fas fa-cog"></i>&nbsp; Quản lý tin tức</a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- content -->
+
+        <div id="content">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid py-2 bg-nav-content">
+                    <button type="button" id="sidebarCollapse" class="btn btn-info d-none d-md-block">
+                        <i class="fas fa-align-left"></i> Bật/Tắt Menu
+                    </button>
+                    <div class="dropdown">
+                        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fas fa-user"></i>
+                            &nbsp;Xin chào, Cường
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="/Home/DangXuat">Đăng xuất</a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            <!-- main-content -->
+
+            <div class="container-fluid">
+                <div id="main-content">
+                    @RenderBody()
+                </div>
+                <hr>
+                <div id="footer-main-content" class="text-center">
+                    @@copyright Nhóm 14, khoa Công nghệ thông tin, Đại học Đà Lạt. Logo by <a href="https://www.youtube.com/channel/UCfjYtjTW69DWMLOOMzFJ5cg"> Nguyen Duc Hoang</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <script src="~/Scripts/js/popper.min.js"></script>
+    <script src="~/Scripts/js/bootstrap.min.js"></script>
+    <script src="~/Scripts/js/datatables.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#sidebarCollapse').on("click", function () {
+                $("#sidebar").toggleClass('active');
+            });
+            var navLinkTab = $("#navLinkIndex").val();
+            if (navLinkTab == "TaiKhoan") {
+                $('#sidebar ul li a').removeClass("active");
+                $('#qlTaiKhoan').addClass("active");
+            }
+        });
+
+    </script>
+    @RenderSection("script", false)
+</body>
+</html>

@@ -1,0 +1,51 @@
+﻿@model Test_2_TrungTamDaoTao_Real.Models.Model.TaiKhoan
+
+    <div id="modalChinhSua" class="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Chỉnh sửa tài khoản</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    @using (Html.BeginForm(null,null,FormMethod.Post,new { @id="chinhSuaForm"}))
+                    {
+                        @Html.AntiForgeryToken()
+                        <div class="form-horizontal">
+                            @Html.HiddenFor(model => model.IdTaiKhoan, new { @id = "SuaIdTaiKhoan" })
+                            @Html.HiddenFor(model => model.MatKhau, new { @id = "SuaMatKhau" })
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.Email, new { @class = "control-label" })
+                                @Html.TextBoxFor(model => model.Email, new { @class = "form-control", @id = "SuaEmail", @readonly = "readonly" } )
+                                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.HoTenLot, new { @class = "control-label" })
+                                @Html.TextBoxFor(model => model.HoTenLot, new { @class = "form-control", @id = "SuaHoVaTenLot" })
+                                @Html.ValidationMessageFor(model => model.HoTenLot, "", new { @class = "text-danger" })
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.Ten, new { @class = "control-label" })
+                                @Html.TextBoxFor(model => model.Ten, new { @class = "form-control", @id = "SuaTen" } )
+                                @Html.ValidationMessageFor(model => model.Ten, "", new { @class = "text-danger" })
+                            </div>
+
+                            <div class="form-group">
+                                <label>Quyền: </label>
+                                @Html.DropDownListFor(model => model.IdQuyen, ViewBag.dsQuyen as SelectList, new { @class = "form-control", @id = "SuaQuyen" } )
+                            </div>
+                        </div>
+                    }
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" id="xacNhanChinhSua">Xác nhận</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+                </div>
+            </div>
+        </div>
+    </div>
+

@@ -1,0 +1,47 @@
+﻿@model Test_2_TrungTamDaoTao_Real.Models.Model.TaiKhoan
+
+<div id="modalXemProfile" class="modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Thông tin tài khoản</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                @using (Html.BeginForm(null, null, FormMethod.Post, new { @id = "chinhSuaTaiKhoanForm" }))
+                {
+                    @Html.AntiForgeryToken()
+                    <div class="form-horizontal">
+                        @Html.HiddenFor(model => model.IdTaiKhoan, new { @id="xemProfileIdTaiKhoan"})
+                        @Html.HiddenFor(model => model.MatKhau, new { @id = "xemProfileMatKhau" })
+                        @Html.HiddenFor(model => model.IdQuyen, new { @id = "xemProfileIdQuyen" })
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Email, new { @class = "control-label" })
+                            @Html.TextBoxFor(model => model.Email, new { @class = "form-control", @id = "xemProfileEmail", @readonly = "readonly" })
+                            @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.HoTenLot, new { @class = "control-label" })
+                            @Html.TextBoxFor(model => model.HoTenLot, new { @class = "form-control", @id = "xemProfileHoVaTenLot", @readonly = "readonly" })
+                            @Html.ValidationMessageFor(model => model.HoTenLot, "", new { @class = "text-danger" })
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Ten, new { @class = "control-label" })
+                            @Html.TextBoxFor(model => model.Ten, new { @class = "form-control", @id = "xemProfileTen", @readonly = "readonly" })
+                            @Html.ValidationMessageFor(model => model.Ten, "", new { @class = "text-danger" })
+                        </div>
+                        <button type="button" id="chinhSuaProfile" class="btn btn-success">Chỉnh sửa</button>
+                    </div>
+                }
+            </div>
+            <div class="modal-footer" id="footerChinhSuaProfile" hidden>
+                <button type="button" class="btn btn-primary" id="xacNhanChinhSua">Xác nhận</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+            </div>
+        </div>
+    </div>
+</div>

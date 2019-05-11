@@ -1,0 +1,60 @@
+﻿@model Test_2_TrungTamDaoTao_Real.Models.Model.TaiKhoanDangKyAdmin
+
+<div id="modalThemMoi" class="modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Thêm mới tài khoản</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                @using (Html.BeginForm(null, null, FormMethod.Post, new { @id = "themMoiForm" }))
+                {
+                    @Html.AntiForgeryToken()
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.EmailDK, new { @class = "control-label" })
+                        @Html.TextBoxFor(model => model.EmailDK, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.EmailDK, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.HoTenLotDK, new { @class = "control-label" })
+                        @Html.TextBoxFor(model => model.HoTenLotDK, new { @class = "form-control" } )
+                        @Html.ValidationMessageFor(model => model.HoTenLotDK, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.TenDK, new { @class = "control-label" })
+                        @Html.TextBoxFor(model => model.TenDK,new { @class = "form-control" } )
+                        @Html.ValidationMessageFor(model => model.TenDK, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.MatKhauDK, new { @class = "control-label" })
+                        @Html.PasswordFor(model => model.MatKhauDK, new { @class = "form-control" } )
+                        @Html.ValidationMessageFor(model => model.MatKhauDK, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.NhapLaiMatKhauDK, new { @class = "control-label" })
+                        @Html.PasswordFor(model => model.NhapLaiMatKhauDK, new { @class = "form-control" } )
+                        @Html.ValidationMessageFor(model => model.NhapLaiMatKhauDK, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="form-group">
+                        <label>Quyền: </label>
+                        @Html.DropDownListFor(model => model.IdQuyen, ViewBag.dsQuyen as SelectList, new { @class = "form-control" })
+                    </div>
+                }
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" id="xacNhanTaoMoi">Tạo mới</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
